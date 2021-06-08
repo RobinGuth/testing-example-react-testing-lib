@@ -6,7 +6,11 @@ import NameComponent from "./NameComponent";
 const rootElement = document.getElementById("root");
 ReactDOM.render(
   <StrictMode>
-    <NameComponent />
+    <NameComponent
+      someFunction={() => {
+        console.log("someFunction was called");
+      }}
+    />
   </StrictMode>,
   rootElement
 );
