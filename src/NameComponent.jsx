@@ -2,8 +2,16 @@ import React from "react";
 
 export default function NameComponent({
   someFunction = () => {},
-  names = ["Herbert", "Kunibert", "Nurbert"],
-  historyOptions = ["All", 3, 5, 8]
+  names = [
+    "Herbert",
+    "Kunibert",
+    "Nurbert",
+    "Schnurrbert",
+    "Turmbert",
+    "Flurbert",
+    "Humbert"
+  ],
+  historyOptions = ["All", 2, 3, 5, 8]
 }) {
   someFunction();
 
@@ -45,7 +53,7 @@ export default function NameComponent({
       <br />
       {name ? "Hello " + name + "!" : null}
       <br />
-      <h2>History</h2>
+      <h2 role="heading">History</h2>
       <select id="amountNames" value={maxAmount} onChange={handleSelectChange}>
         {historyOptions.map((element) => (
           <option value={element}>{element}</option>
@@ -56,11 +64,11 @@ export default function NameComponent({
           <th>Number</th>
           <th>Name</th>
         </tr>
-        {nameList.map((element) => {
+        {nameList.reverse().map((element) => {
           return maxAmount === "All" ||
             nameList.indexOf(element) < maxAmount ? (
             <tr>
-              <td>{nameList.indexOf(element) + 1}</td>
+              <td>{nameList.length - nameList.indexOf(element)}</td>
               <td>{element}</td>
             </tr>
           ) : null;
