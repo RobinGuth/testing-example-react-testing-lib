@@ -10,6 +10,16 @@ ReactDOM.render(
       someFunction={() => {
         console.log("someFunction was called");
       }}
+      names={[
+        "Robert",
+        "Herbert",
+        "Kunibert",
+        "Nurbert",
+        "Schnurrbert",
+        "Turmbert",
+        "Flurbert",
+        "Humbert"
+      ]}
     />
   </StrictMode>,
   rootElement
